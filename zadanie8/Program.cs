@@ -6,20 +6,21 @@ Console.Clear();
 Console.Write("Введите число: - ");
 int numbers = int.Parse(Console.ReadLine());
 int counter = 1;
+if (numbers % 2 != 0) numbers--; //Если нечетное, то вычтем единичку 
 while (counter <= numbers)
 {
     if (counter % 2 == 0 && counter < numbers) // "Это дополнительное условие я добавил что-бы - 
     {
+        //Здесь все хорошо
         Console.Write(counter + ", ");
         counter++;
     }
-    else if (counter == numbers)                // внутрений перфекционист ликовал.
+    else if (counter % 2 == 0 && counter == numbers)                // внутрений перфекционист ликовал.
     {
-        Console.Write(counter + ".");
+        Console.WriteLine(counter + ".");
         counter++;
     }
-    else
-    {
-        counter++;
-    }
+
+
+    counter++;
 }
